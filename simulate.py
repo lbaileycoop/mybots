@@ -2,9 +2,7 @@ import pybullet as p
 
 physicsClient = p.connect(p.GUI)
 
-for (int i = 0; i < 1000; i++) {
-    p.stepSimulation();
-}
-
+for i in range(1000):
+    p.stepSimulation()
 
 p.disconnect()
