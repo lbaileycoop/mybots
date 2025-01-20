@@ -8,13 +8,11 @@ physicsClient = p.connect(p.GUI)
 
 p.setAdditionalSearchPath(pybullet_data.getDataPath())
 
-
 # setting gravity
-p.setGravity(0,0,-9.8)
+p.setGravity(0, 0, -9.8)
 
 # setting the floor
 planeId = p.loadURDF("plane.urdf")
-
 
 # loading in box
 p.loadSDF("box.sdf")
@@ -24,6 +22,6 @@ for i in range(1000):
     p.stepSimulation()
     time.sleep(1/60)
     print(i)
-	
+
 # disconnecting from world
 p.disconnect()
