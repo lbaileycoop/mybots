@@ -15,7 +15,7 @@ p.setGravity(0, 0, -9.8)
 planeId = p.loadURDF("plane.urdf")
 
 # loading in box
-p.loadSDF("box.sdf")
+p.loadSDF("boxes.sdf")
 
 # running simulation at specified time lengths
 for i in range(1000):
