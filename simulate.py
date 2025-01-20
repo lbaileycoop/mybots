@@ -1,5 +1,6 @@
 import pybullet as p
 import time
+<<<<<<< HEAD
 import pybullet_data
 
 # connecting to world
@@ -20,10 +21,23 @@ planeId = p.loadURDF("plane.urdf")
 p.loadSDF("box.sdf")
 
 # running simulation at specified time lengths
+=======
+
+physicsClient = p.connect(p.GUI)
+#p.configureDebugVisualizer(p.COV_ENABLE_GUI,0)
+
+p.loadSDF("box.sdf")
+
+>>>>>>> 3dd1af760258c8481ee8041b554f5cf9bb4b54ac
 for i in range(1000):
     p.stepSimulation()
     time.sleep(1/60)
     print(i)
 	
+<<<<<<< HEAD
 # disconnecting from world
+=======
+
+
+>>>>>>> 3dd1af760258c8481ee8041b554f5cf9bb4b54ac
 p.disconnect()
