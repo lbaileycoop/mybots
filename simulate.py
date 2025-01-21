@@ -2,7 +2,7 @@ import pybullet as p
 import time
 import pybullet_data
 import pyrosim.pyrosim as pyrosim
-import numpy
+import numpy as np
 
 
 # connecting to world
@@ -26,7 +26,7 @@ p.loadSDF("world.sdf")
 pyrosim.Prepare_To_Simulate(robotId)
 
 # vector for storing
-backLegSensorValues = numpy.zeros(100)
+backLegSensorValues = np.zeros(100)
 
 # running simulation at specified time lengths
 for i in range(100):
@@ -38,7 +38,7 @@ for i in range(100):
     backLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("BackLeg")
 
 #print(backLegSensorValues)
-numpy.save('data/backLegSensorValues.npy', backLegSensorValues)
+np.save('data/backLegSensorValues.npy', backLegSensorValues)
 
 # disconnecting from world
 p.disconnect()

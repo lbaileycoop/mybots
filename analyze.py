@@ -1,5 +1,7 @@
-import numpy
+import numpy as np
+import matplotlib.pyplot as plt
+
 
 # printing touvh sensor values from array
-backLegSensorValues = numpy.load('data/backLegSensorValues.npy')
+backLegSensorValues = np.load('data/backLegSensorValues.npy')
 print(backLegSensorValues)
