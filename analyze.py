@@ -2,6 +2,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-# printing touvh sensor values from array
+# printing touch sensor values from array
 backLegSensorValues = np.load('data/backLegSensorValues.npy')
-print(backLegSensorValues)
+frontLegSensorValues = np.load('data/frontLegSensorValues.npy')
+
+#print(backLegSensorValues)
+
+plt.plot(backLegSensorValues)
+plt.plot(frontLegSensorValues)
+plt.show()
