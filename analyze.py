@@ -8,6 +8,7 @@ frontLegSensorValues = np.load('data/frontLegSensorValues.npy')
 
 #print(backLegSensorValues)
 
-plt.plot(backLegSensorValues)
-plt.plot(frontLegSensorValues)
+plt.plot(backLegSensorValues, label='backLegSensorValues', linewidth=5)
+plt.plot(frontLegSensorValues, label='frontLegSensorValues', linewidth=2)
+plt.legend()
 plt.show()
