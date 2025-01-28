@@ -80,6 +80,6 @@ np.save('data/frontLegSensorValues.npy', frontLegSensorValues)
 np.save('data/backLegTargetAngles.npy', backLegTargetAngles)
 np.save('data/frontLegTargetAngles.npy', frontLegTargetAngles)
 
-# disconnecting from world
-p.disconnect()
+# # disconnecting from world
+# p.disconnect()
 

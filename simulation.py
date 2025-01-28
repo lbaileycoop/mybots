@@ -64,3 +64,6 @@ class SIMULATION:
             #
             # pyrosim.Set_Motor_For_Joint(bodyIndex=self.robotId, jointName="Torso_FrontLeg", controlMode=p.POSITION_CONTROL,
             #                             targetPosition=frontLegTargetAngles[i], maxForce=50)
+
+    def __del__(self):
+        p.disconnect()
