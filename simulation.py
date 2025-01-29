@@ -7,6 +7,8 @@ import pyrosim.pyrosim as pyrosim
 import numpy as np
 import random
 import math
+import constants as c
+
 
 class SIMULATION:
 
@@ -30,10 +32,10 @@ class SIMULATION:
 
     def Run(self):
         # vector for storing
-        backLegSensorValues = np.zeros(1000)
-        frontLegSensorValues = np.zeros(1000)
-        backLegTargetAngles = np.zeros(1000)
-        frontLegTargetAngles = np.zeros(1000)
+        backLegSensorValues = np.zeros(c.vectorSize)
+        frontLegSensorValues = np.zeros(c.vectorSize)
+        backLegTargetAngles = np.zeros(c.vectorSize)
+        frontLegTargetAngles = np.zeros(c.vectorSize)
 
         backLegAmplitude = np.pi / 4
         backLegFrequency = 0.1
@@ -44,11 +46,13 @@ class SIMULATION:
         frontLegPhaseOffset = np.pi
 
         # running simulation at specified time lengths
-        for i in range(1000):
+        for t in range(c.vectorSize):
             p.stepSimulation()
             time.sleep(1 / 240)
-            print(i)
-            #
+
+            # enabling sensing in the robot
+            self.robot.Sense(t)
+
             # # adding touch sensors
             # backLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("BackLeg")
             # frontLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("FrontLeg")

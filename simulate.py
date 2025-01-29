@@ -14,6 +14,7 @@ simulation = SIMULATION()
 # Call the Run method to start the simulation
 simulation.Run()
 
+
 # connecting to world
 # physicsClient = p.connect(p.GUI)
 # #p.configureDebugVisualizer(p.COV_ENABLE_GUI,0)
