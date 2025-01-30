@@ -5,3 +5,4 @@ vectorSize = 1000
 Amplitude = np.pi / 4
 Frequency = 0.1
 PhaseOffset = np.pi
+simulationSpeed = 1 / 60

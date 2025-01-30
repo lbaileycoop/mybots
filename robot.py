@@ -15,6 +15,8 @@ class ROBOT:
         self.sensors = {}
 
         for linkName in pyrosim.linkNamesToIndices:
+            # # prints sensor names
+            # print(linkName)
             self.sensors[linkName] = SENSOR(linkName)
     def Sense(self, t):
         for sensor in self.sensors.values():
@@ -23,6 +25,8 @@ class ROBOT:
         self.motors = {}
 
         for jointName in pyrosim.jointNamesToIndices:
+            # # prints joint names
+            # print(jointName)
             self.motors[jointName] = MOTOR(jointName)
     def Act(self, t, robotId):
         for motor in self.motors.values():

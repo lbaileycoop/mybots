@@ -29,14 +29,13 @@ class SIMULATION:
         # running simulation at specified time lengths
         for t in range(c.vectorSize):
             p.stepSimulation()
-            time.sleep(1 / 240)
+            time.sleep(c.simulationSpeed)
 
             # enabling sensing in the robot
             self.robot.Sense(t)
 
             # enabling acting in the robot
             self.robot.Act(t, self.robotId)
-
     def __del__(self):
         # Save sensor values
         for sensor in self.robot.sensors.values():

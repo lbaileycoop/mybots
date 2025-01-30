@@ -10,16 +10,18 @@ class MOTOR:
         self.jointName = jointName
         self.motorValues = np.zeros(c.vectorSize)
         self.Prepare_To_Act()
-
     def Prepare_To_Act(self):
         self.amplitude = c.Amplitude
         self.frequency = c.Frequency
         self.offset = c.PhaseOffset
 
-        # compute the target angle using amplitude, frequency, and phase offset
+        # modifying the specified motor's frequency by half
+        if self.jointName == "Torso_BackLeg":
+            self.frequency = c.Frequency / 2
+
+            # compute the target angle using amplitude, frequency, and phase offset
         for t in range(c.vectorSize):
             self.motorValues[t] = self.amplitude * math.sin(self.frequency * t + self.offset)
-
     def Set_Value(self, t, robotId):
         # simulating a motor that supplies force to one of the robot's joints
         # bodyIndex tells the simulator that we are about to simulate a motor in the robot called robotId
