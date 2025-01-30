@@ -4,14 +4,9 @@ import pybullet as p
 import pybullet_data
 import time
 import pyrosim.pyrosim as pyrosim
-import numpy as np
-import random
-import math
 import constants as c
 
-
 class SIMULATION:
-
     def __init__(self):
         # connecting to world
         self.physicsClient = p.connect(p.GUI)
@@ -31,20 +26,6 @@ class SIMULATION:
         pyrosim.Prepare_To_Simulate(self.robotId)
 
     def Run(self):
-        # vector for storing
-        backLegSensorValues = np.zeros(c.vectorSize)
-        frontLegSensorValues = np.zeros(c.vectorSize)
-        backLegTargetAngles = np.zeros(c.vectorSize)
-        frontLegTargetAngles = np.zeros(c.vectorSize)
-
-        backLegAmplitude = np.pi / 4
-        backLegFrequency = 0.1
-        backLegPhaseOffset = np.pi
-
-        frontLegAmplitude = np.pi / 4
-        frontLegFrequency = 0.1
-        frontLegPhaseOffset = np.pi
-
         # running simulation at specified time lengths
         for t in range(c.vectorSize):
             p.stepSimulation()
@@ -53,21 +34,16 @@ class SIMULATION:
             # enabling sensing in the robot
             self.robot.Sense(t)
 
-            # # adding touch sensors
-            # backLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("BackLeg")
-            # frontLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("FrontLeg")
-            #
-            # # compute the target angle using amplitude, frequency, and phase offset
-            # backLegTargetAngles[i] = backLegAmplitude * math.sin(backLegFrequency * i + backLegPhaseOffset)
-            # frontLegTargetAngles[i] = frontLegAmplitude * math.sin(frontLegFrequency * i + frontLegPhaseOffset)
-            #
-            # # simulating a motor that supplies force to one of the robot's joints
-            # # bodyIndex tells the simulator that we are about to simulate a motor in the robot called robotId
-            # pyrosim.Set_Motor_For_Joint(bodyIndex=self.robotId, jointName="Torso_BackLeg", controlMode=p.POSITION_CONTROL,
-            #                             targetPosition=backLegTargetAngles[i], maxForce=50)
-            #
-            # pyrosim.Set_Motor_For_Joint(bodyIndex=self.robotId, jointName="Torso_FrontLeg", controlMode=p.POSITION_CONTROL,
-            #                             targetPosition=frontLegTargetAngles[i], maxForce=50)
+            # enabling acting in the robot
+            self.robot.Act(t, self.robotId)
 
     def __del__(self):
+        # Save sensor values
+        for sensor in self.robot.sensors.values():
+            sensor.Save_Values()
+
+        # Save motor values
+        for motor in self.robot.motors.values():
+            motor.Save_Values()
+
         p.disconnect()

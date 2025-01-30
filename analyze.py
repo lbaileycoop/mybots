@@ -3,18 +3,18 @@ import matplotlib.pyplot as plt
 
 
 # printing touch sensor values from array
-backLegSensorValues = np.load('data/backLegSensorValues.npy')
-frontLegSensorValues = np.load('data/frontLegSensorValues.npy')
-backLegTargetAngles = np.load('data/backLegTargetAngles.npy')
-frontLegTargetAngles = np.load('data/frontLegTargetAngles.npy')
+sensorValues = np.load('data/sensorValues.npy')
+motorValues = np.load('data/motorValues.npy')
 
+# Plotting Sensor Values
+plt.plot(sensorValues, label='sensorValues', linewidth=2)
+plt.title('Sensor Commands')
+plt.legend()
+plt.show()
 
-#print(backLegSensorValues)
-
-# plt.plot(backLegSensorValues, label='backLegSensorValues', linewidth=5)
-# plt.plot(frontLegSensorValues, label='frontLegSensorValues', linewidth=2)
-plt.plot(backLegTargetAngles, label='backLegTargetAngles', linewidth=5)
-plt.plot(frontLegTargetAngles, label='frontLegTargetAngles', linewidth=2)
+# Plotting Motor Values
+plt.plot(motorValues, label='motorValues', linewidth=2)
 plt.title('Motor Commands')
 plt.legend()
 plt.show()
+
