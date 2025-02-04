@@ -34,6 +34,9 @@ class SIMULATION:
             # enabling sensing in the robot
             self.robot.Sense(t)
 
+            # enabling "thinking" in the robot
+            self.robot.Think()
+
             # enabling acting in the robot
             self.robot.Act(t, self.robotId)
     def __del__(self):

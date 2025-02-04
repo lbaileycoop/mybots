@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c846beea-a7bf-418f-b163-2638c766a572" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/brain.nndf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/body.urdf" beforeDir="false" afterPath="$PROJECT_DIR$/body.urdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boxes.sdf" beforeDir="false" afterPath="$PROJECT_DIR$/boxes.sdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/SensorValues.npy" beforeDir="false" afterPath="$PROJECT_DIR$/data/SensorValues.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/backLegSensorValues.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/backLegTargetAngles.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/frontLegSensorValues.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/frontLegTargetAngles.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/simulation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/world.sdf" beforeDir="false" afterPath="$PROJECT_DIR$/world.sdf" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2rs285clMO2L1JUyAuyndRvIGz0" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.analyze.executor": "Run",
+    "Python.generate.executor": "Run",
+    "Python.simulate.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "neurons",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-50da183f06c8-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13135.95" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c846beea-a7bf-418f-b163-2638c766a572" name="Changes" comment="" />
+      <created>1737333300493</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1737333300493</updated>
+      <workItem from="1737333302546" duration="280000" />
+      <workItem from="1737333586019" duration="3901000" />
+      <workItem from="1737338373214" duration="3257000" />
+      <workItem from="1737396133176" duration="2589000" />
+      <workItem from="1737471623827" duration="5508000" />
+      <workItem from="1737481127470" duration="3035000" />
+      <workItem from="1737502744437" duration="619000" />
+      <workItem from="1738078519933" duration="8131000" />
+      <workItem from="1738087812542" duration="67000" />
+      <workItem from="1738103577015" duration="4414000" />
+      <workItem from="1738164863921" duration="9082000" />
+      <workItem from="1738248938149" duration="4765000" />
+      <workItem from="1738354979935" duration="234000" />
+      <workItem from="1738613999979" duration="1433000" />
+      <workItem from="1738684002406" duration="1274000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/mybots$analyze.coverage" NAME="analyze Coverage Results" MODIFIED="1737483481937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mybots$generate.coverage" NAME="generate Coverage Results" MODIFIED="1737333675975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mybots$simulate.coverage" NAME="simulate Coverage Results" MODIFIED="1737338480698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
