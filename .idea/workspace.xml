@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c846beea-a7bf-418f-b163-2638c766a572" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/brain.nndf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/body.urdf" beforeDir="false" afterPath="$PROJECT_DIR$/body.urdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boxes.sdf" beforeDir="false" afterPath="$PROJECT_DIR$/boxes.sdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/SensorValues.npy" beforeDir="false" afterPath="$PROJECT_DIR$/data/SensorValues.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/backLegSensorValues.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/backLegTargetAngles.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/frontLegSensorValues.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/frontLegTargetAngles.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/simulation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world.sdf" beforeDir="false" afterPath="$PROJECT_DIR$/world.sdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +83,7 @@
       <workItem from="1738248938149" duration="4765000" />
       <workItem from="1738354979935" duration="234000" />
       <workItem from="1738613999979" duration="1433000" />
-      <workItem from="1738684002406" duration="1274000" />
+      <workItem from="1738684002406" duration="1835000" />
     </task>
     <servers />
   </component>
