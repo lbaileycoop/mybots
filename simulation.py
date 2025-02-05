@@ -41,11 +41,11 @@ class SIMULATION:
             self.robot.Act(t, self.robotId)
     def __del__(self):
         # Save sensor values
-        for sensor in self.robot.sensors.values():
-            sensor.Save_Values()
-
-        # Save motor values
-        for motor in self.robot.motors.values():
-            motor.Save_Values()
+        # for sensor in self.robot.sensors.values():
+        #     sensor.Save_Values()
+        #
+        # # Save motor values
+        # for motor in self.robot.motors.values():
+        #     motor.Save_Values()
 
         p.disconnect()
