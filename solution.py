@@ -1,3 +1,4 @@
+import random
 import numpy as np
 import pyrosim.pyrosim as pyrosim
 import os
@@ -66,8 +67,19 @@ class SOLUTION:
         # ending program
         pyrosim.End()
 
-    def Evaluate(self):
+    def Evaluate(self, mode):
         self.Create_World()
         self.Create_Body()
         self.Create_Brain()
-        os.system("python3 simulate.py")
+        os.system(f"python3 simulate.py {mode}")
+        file = open("fitness.txt", "r")
+        self.fitness = float(file.read())
+        file.close()
+
+    def Mutate(self):
+        # select a random row/sensor neuron
+        randomRow = random.randint(0, 2)
+
+        # select a random column/motor neuron
+        randomColumn = random.randint(0, 1)
+        self.weights[randomRow, randomColumn] = random.random() * 2 - 1
