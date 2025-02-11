@@ -1,4 +1,5 @@
 import pyrosim.pyrosim as pyrosim
+import random
 
 def Create_World():
     pyrosim.Start_SDF("world.sdf")
@@ -46,10 +47,14 @@ def Generate_Brain():
 
     # generating synapses
     pyrosim.Send_Synapse(sourceNeuronName=1, targetNeuronName=3, weight=-100.0)
-    pyrosim.Send_Synapse(sourceNeuronName=2, targetNeuronName=3, weight=10.0)
+    pyrosim.Send_Synapse(sourceNeuronName=2, targetNeuronName=3, weight=-100.0)
     pyrosim.Send_Synapse(sourceNeuronName=3, targetNeuronName=4, weight=10.0)
     pyrosim.Send_Synapse(sourceNeuronName=4, targetNeuronName=4, weight=10.0)
 
+    # fully connected neural network.
+    for sensorName in ['Torso', 'BackLeg', 'FrontLeg']:
+        for motorName in ['Torso_BackLeg', 'Torso_FrontLeg']:
+            pyrosim.Send_Synapse(sourceNeuronName=sensorName, targetNeuronName=motorName, weight=random.random() * (1.0 - (-1.0)) + (-1.0))
 
     # ending program
     pyrosim.End()
