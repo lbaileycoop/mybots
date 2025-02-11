@@ -1,7 +1,7 @@
 import numpy as np
 
 # setting all variables needed with appropriate names
-vectorSize = 1000
+vectorSize = 50
 Amplitude = np.pi / 4
 Frequency = 0.1
 PhaseOffset = np.pi

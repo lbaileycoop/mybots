@@ -54,7 +54,7 @@ def Generate_Brain():
     # fully connected neural network.
     for sensorName in ['Torso', 'BackLeg', 'FrontLeg']:
         for motorName in ['Torso_BackLeg', 'Torso_FrontLeg']:
-            pyrosim.Send_Synapse(sourceNeuronName=sensorName, targetNeuronName=motorName, weight=random.random() * (1.0 - (-1.0)) + (-1.0))
+            pyrosim.Send_Synapse(sourceNeuronName=sensorName, targetNeuronName=motorName, weight=random.uniform(-1, 1))
 
     # ending program
     pyrosim.End()

@@ -49,3 +49,6 @@ class SIMULATION:
         #     motor.Save_Values()
 
         p.disconnect()
+
+    def Get_Fitness(self):
+        self.robot.Get_Fitness()
