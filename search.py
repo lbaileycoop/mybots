@@ -1,12 +1,7 @@
 import os
-from hillclimber import HILL_CLIMBER
+from parallelHillClimber import PARALLEL_HILL_CLIMBER
 
-for i in range(2):
-    # os.system("python3 generate.py")
-    # os.system("python3 simulate.py")
-    os.system("python3 hillclimber.py")
-
-    # creating instance of hillclimber
-    hc = HILL_CLIMBER()
-    hc.Evolve()
-    hc.Show_Best()
+# creating instance of hillclimber
+phc = PARALLEL_HILL_CLIMBER()
+phc.Evolve()
+phc.Show_Best()

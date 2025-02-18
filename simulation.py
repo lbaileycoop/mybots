@@ -7,7 +7,8 @@ import pyrosim.pyrosim as pyrosim
 import constants as c
 
 class SIMULATION:
-    def __init__(self, directOrGUI):
+    def __init__(self, directOrGUI, solutionID):
+        self.directOrGUI = directOrGUI
         if directOrGUI == "DIRECT":
             self.physicsClient = p.connect(p.DIRECT)
         else:
@@ -24,7 +25,7 @@ class SIMULATION:
 
         # creates a new SIMULATION attribute, and that attribute will hold an instance of the WORLD class
         self.world = WORLD()
-        self.robot = ROBOT()
+        self.robot = ROBOT(solutionID)
         self.robotId = self.robot.robotId
 
         # additional setting up
@@ -34,14 +35,12 @@ class SIMULATION:
         # running simulation at specified time lengths
         for t in range(c.vectorSize):
             p.stepSimulation()
-            time.sleep(c.simulationSpeed)
-
+            if self.directOrGUI == "GUI":
+                time.sleep(c.simulationSpeed)
             # enabling sensing in the robot
             self.robot.Sense(t)
-
             # enabling "thinking" in the robot
             self.robot.Think()
-
             # enabling acting in the robot
             self.robot.Act(t, self.robotId)
     def __del__(self):
@@ -55,5 +54,5 @@ class SIMULATION:
 
         p.disconnect()
 
-    def Get_Fitness(self):
-        self.robot.Get_Fitness()
+    def Get_Fitness(self, solutionID):
+        self.robot.Get_Fitness(solutionID)
