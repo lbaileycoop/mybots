@@ -3,8 +3,11 @@ import numpy as np
 # setting all variables needed with appropriate names
 vectorSize = 1000
 Amplitude = np.pi / 4
-Frequency = 0.1
+Frequency = 2
 PhaseOffset = np.pi
 simulationSpeed = 1 / 240
 numberOfGenerations = 10
 populationSize = 10
+numSensorNeurons = 4
+numMotorNeurons = 8
+motorJointRange = 0.2
