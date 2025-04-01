@@ -18,6 +18,7 @@ class SOLUTION:
         pyrosim.Send_Cube(name="LeftBarrier", pos=[-5, 5, 1], size=[0.2, 15, 2])  # Left wall
         pyrosim.Send_Cube(name="RightBarrier", pos=[5, 5, 1], size=[0.2, 15, 2])  # Right wall
 
+
         # Place four pillars as obstacles on the runway
         pyrosim.Send_Cube(name="Pillar1", pos=[-1.5, 2, 0.75], size=[0.3, 0.3, 1.5])  # First pillar
         pyrosim.Send_Cube(name="Pillar2", pos=[0, 4, 0.75], size=[0.3, 0.3, 1.5])  # Second pillar
@@ -26,6 +27,8 @@ class SOLUTION:
 
 
         pyrosim.End()
+
+
 
     def Create_Body(self):
         pyrosim.Start_URDF("body.urdf")

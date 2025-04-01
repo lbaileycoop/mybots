@@ -1,52 +1,6 @@
 pybullet build time: Jan 14 2025 16:16:48
-2025-03-31 21:17:41.362 python3[93537:3977611] +[IMKClient subclass]: chose IMKClient_Modern
-2025-03-31 21:17:41.362 python3[93537:3977611] +[IMKInputSession subclass]: chose IMKInputSession_Modern
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+2025-03-31 21:38:54.128 python3[97657:4007743] +[IMKClient subclass]: chose IMKClient_Modern
+2025-03-31 21:38:54.128 python3[97657:4007743] +[IMKInputSession subclass]: chose IMKInputSession_Modern
 
 
 
@@ -1012,6 +966,23 @@ MotionThreadFunc thread started
 b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
 
 b3Printf: expected a world element, continuing without it.
+Traceback (most recent call last):
+  File "/Users/lucasbailey/PycharmProjects/mybots/simulate.py", line 11, in <module>
+    simulation.Run()
+  File "/Users/lucasbailey/PycharmProjects/mybots/simulation.py", line 51, in Run
+    self.robot.Sense(t)
+  File "/Users/lucasbailey/PycharmProjects/mybots/robot.py", line 31, in Sense
+    sensor.Get_Value(t)
+  File "/Users/lucasbailey/PycharmProjects/mybots/sensor.py", line 11, in Get_Value
+    self.values[t] = pyrosim.Get_Touch_Sensor_Value_For_Link(self.linkName)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucasbailey/PycharmProjects/mybots/pyrosim/pyrosim.py", line 53, in Get_Touch_Sensor_Value_For_Link
+    for pt in pts:
+TypeError: 'NoneType' object is not iterable
+Exception ignored in: <function SIMULATION.__del__ at 0x115400360>
+Traceback (most recent call last):
+  File "/Users/lucasbailey/PycharmProjects/mybots/simulation.py", line 65, in __del__
+pybullet.error: Not connected to physics server.
 numActiveThreads = 0
 stopping threads
 Thread with taskId 0 exiting
