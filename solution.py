@@ -14,14 +14,17 @@ class SOLUTION:
     def Create_World(self):
         pyrosim.Start_SDF("world.sdf")
 
-        # assigning torso variables
-        length = 1
-        width = 1
-        height = 1
-        x = -2
-        y = 2
-        z = 0.5
-        pyrosim.Send_Cube(name="Box", pos=[x, y, z], size=[length, width, height])
+        # Create barriers on both sides of the runway
+        pyrosim.Send_Cube(name="LeftBarrier", pos=[-5, 5, 1], size=[0.2, 15, 2])  # Left wall
+        pyrosim.Send_Cube(name="RightBarrier", pos=[5, 5, 1], size=[0.2, 15, 2])  # Right wall
+
+        # Place four pillars as obstacles on the runway
+        pyrosim.Send_Cube(name="Pillar1", pos=[-1.5, 2, 0.75], size=[0.3, 0.3, 1.5])  # First pillar
+        pyrosim.Send_Cube(name="Pillar2", pos=[0, 4, 0.75], size=[0.3, 0.3, 1.5])  # Second pillar
+        pyrosim.Send_Cube(name="Pillar3", pos=[0, 8, 0.75], size=[0.3, 0.3, 1.5])  # Third pillar
+        pyrosim.Send_Cube(name="Pillar4", pos=[3, 10, 0.75], size=[0.3, 0.3, 1.5])  # Fourth pillar
+
+
         pyrosim.End()
 
     def Create_Body(self):

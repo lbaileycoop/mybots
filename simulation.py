@@ -1,3 +1,5 @@
+import random
+
 from world import WORLD
 from robot import ROBOT
 import pybullet as p
@@ -16,7 +18,7 @@ class SIMULATION:
 
         # connecting to world
         self.physicsClient = p.connect(p.DIRECT)
-        #p.configureDebugVisualizer(p.COV_ENABLE_GUI,0)
+        # p.configureDebugVisualizer(p.COV_ENABLE_GUI,0)
 
         p.setAdditionalSearchPath(pybullet_data.getDataPath())
 
@@ -30,6 +32,12 @@ class SIMULATION:
 
         # additional setting up
         pyrosim.Prepare_To_Simulate(self.robotId)
+
+        # **Add the goal block**
+        goal_position = [0, 14, 0.5]  # Adjust this for your maze's exit
+
+        goal_block = p.loadURDF("cube_small.urdf", goal_position, globalScaling=20)  # Scaling factor
+        p.changeVisualShape(goal_block, -1, rgbaColor=[1, 0, 0, 1])  # Red block
 
     def Run(self):
         # running simulation at specified time lengths
