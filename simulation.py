@@ -1,5 +1,3 @@
-import random
-
 from world import WORLD
 from robot import ROBOT
 import pybullet as p
@@ -38,9 +36,6 @@ class SIMULATION:
         goal_block = p.loadURDF("cube_small.urdf", goal_position, globalScaling=20)  # Scaling factor
         p.changeVisualShape(goal_block, -1, rgbaColor=[1, 0, 0, 1])  # Red block
 
-
-
-
     def Run(self):
         # running simulation at specified time lengths
         for t in range(c.vectorSize):
@@ -53,15 +48,8 @@ class SIMULATION:
             self.robot.Think()
             # enabling acting in the robot
             self.robot.Act(t, self.robotId)
-    def __del__(self):
-        # Save sensor values
-        # for sensor in self.robot.sensors.values():
-        #     sensor.Save_Values()
-        #
-        # # Save motor values
-        # for motor in self.robot.motors.values():
-        #     motor.Save_Values()
 
+    def __del__(self):
         p.disconnect()
 
     def Get_Fitness(self, solutionID):

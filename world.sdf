@@ -3,7 +3,7 @@
         <pose>-5 5 1 0 0 0 </pose>
         <link name="LeftBarrier">
             <inertial>
-                <mass>1.0</mass>
+                <mass>200</mass>
                 <inertia>
                     <ixx>0.083</ixx>
                     <ixy>0.0</ixy>
@@ -33,7 +33,7 @@
         <pose>5 5 1 0 0 0 </pose>
         <link name="RightBarrier">
             <inertial>
-                <mass>1.0</mass>
+                <mass>200</mass>
                 <inertia>
                     <ixx>0.083</ixx>
                     <ixy>0.0</ixy>
@@ -63,7 +63,7 @@
         <pose>-1.5 2 0.75 0 0 0 </pose>
         <link name="Pillar1">
             <inertial>
-                <mass>1.0</mass>
+                <mass>200</mass>
                 <inertia>
                     <ixx>0.083</ixx>
                     <ixy>0.0</ixy>
@@ -93,7 +93,7 @@
         <pose>0 4 0.75 0 0 0 </pose>
         <link name="Pillar2">
             <inertial>
-                <mass>1.0</mass>
+                <mass>200</mass>
                 <inertia>
                     <ixx>0.083</ixx>
                     <ixy>0.0</ixy>
@@ -123,7 +123,7 @@
         <pose>0 8 0.75 0 0 0 </pose>
         <link name="Pillar3">
             <inertial>
-                <mass>1.0</mass>
+                <mass>200</mass>
                 <inertia>
                     <ixx>0.083</ixx>
                     <ixy>0.0</ixy>
@@ -153,7 +153,7 @@
         <pose>3 10 0.75 0 0 0 </pose>
         <link name="Pillar4">
             <inertial>
-                <mass>1.0</mass>
+                <mass>200</mass>
                 <inertia>
                     <ixx>0.083</ixx>
                     <ixy>0.0</ixy>
