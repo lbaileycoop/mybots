@@ -32,7 +32,7 @@ class SIMULATION:
         pyrosim.Prepare_To_Simulate(self.robotId)
 
         # **Add the goal block**
-        goal_position = [0, 14, 0.5]  # Adjust this for your maze's exit
+        goal_position = [0, 19, 0.5]  # Adjust this for your maze's exit
         goal_block = p.loadURDF("cube_small.urdf", goal_position, globalScaling=20)  # Scaling factor
         p.changeVisualShape(goal_block, -1, rgbaColor=[1, 0, 0, 1])  # Red block
 
@@ -48,6 +48,10 @@ class SIMULATION:
             self.robot.Think()
             # enabling acting in the robot
             self.robot.Act(t, self.robotId)
+
+            # Check for collisions at each step
+            self.robot.Check_Collisions()
+
 
     def __del__(self):
         p.disconnect()

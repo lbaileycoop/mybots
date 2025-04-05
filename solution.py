@@ -1,6 +1,5 @@
 import random
 import time
-
 import numpy as np
 import pyrosim.pyrosim as pyrosim
 import os
@@ -15,9 +14,9 @@ class SOLUTION:
         pyrosim.Start_SDF("world.sdf")
 
         # Create barriers on both sides of the runway
-        pyrosim.Send_Cube(name="LeftBarrier", pos=[-5, 5, 1], size=[0.2, 15, 2], mass=200)  # Left wall
-        pyrosim.Send_Cube(name="RightBarrier", pos=[5, 5, 1], size=[0.2, 15, 2], mass=200)  # Right wall
-
+        pyrosim.Send_Cube(name="LeftBarrier", pos=[-7, 7.75, 1], size=[0.3, 20, 2], mass=200)  # Left wall
+        pyrosim.Send_Cube(name="RightBarrier", pos=[7, 7.75, 1], size=[0.3, 20, 2], mass=200)  # Right wall
+        pyrosim.Send_Cube(name="BackWall", pos=[0, -2.625, 1], size=[14.25, 0.3, 2], mass=200)  # Horizontal wall at the back
 
         # Place four pillars as obstacles on the runway
         pyrosim.Send_Cube(name="Pillar1", pos=[-1.5, 2, 0.75], size=[0.3, 0.3, 1.5], mass=200)  # First pillar
@@ -25,10 +24,7 @@ class SOLUTION:
         pyrosim.Send_Cube(name="Pillar3", pos=[0, 8, 0.75], size=[0.3, 0.3, 1.5], mass=200)  # Third pillar
         pyrosim.Send_Cube(name="Pillar4", pos=[3, 10, 0.75], size=[0.3, 0.3, 1.5], mass=200)  # Fourth pillar
 
-
         pyrosim.End()
-
-
 
     def Create_Body(self):
         pyrosim.Start_URDF("body.urdf")

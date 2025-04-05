@@ -1,3 +1,5 @@
+import math
+
 import pybullet as p
 import pybullet_data
 import pyrosim.pyrosim as pyrosim
@@ -19,6 +21,12 @@ class ROBOT:
         os.system(f"rm brain{solutionID}.nndf")
 
 
+        # Define the goal position (the position of the goal block)
+        self.goalPosition = [0, 19, 0.5]
+        # Track collisions
+        self.collision_penalty = 0  # Accumulate penalty for collisions
+
+
     def Prepare_To_Sense(self):
         self.sensors = {}
 
@@ -36,30 +44,80 @@ class ROBOT:
             # # prints joint names
             # print(jointName)
             self.motors[jointName] = MOTOR(jointName)
-    def Act(self, desiredAngle, robotId):
+    def Act(self, t, robotId):
+        # for neuronName in self.nn.Get_Neuron_Names():
+        #     if self.nn.Is_Motor_Neuron(neuronName):
+        #         jointName = self.nn.Get_Motor_Neurons_Joint(neuronName)
+        #         desiredAngle = self.nn.Get_Value_Of(neuronName)
+        #         desiredAngle = desiredAngle * c.motorJointRange
+        #         self.motors[jointName].Set_Value(desiredAngle, robotId)
+        #         # print(neuronName, jointName, desiredAngle)
+
         for neuronName in self.nn.Get_Neuron_Names():
             if self.nn.Is_Motor_Neuron(neuronName):
                 jointName = self.nn.Get_Motor_Neurons_Joint(neuronName)
-                desiredAngle = self.nn.Get_Value_Of(neuronName)
-                desiredAngle = desiredAngle * c.motorJointRange
+                desiredAngle = self.nn.Get_Value_Of(neuronName) * c.motorJointRange
+                desiredAngle = max(min(desiredAngle, c.motorJointRange), -c.motorJointRange)
                 self.motors[jointName].Set_Value(desiredAngle, robotId)
-                # print(neuronName, jointName, desiredAngle)
-        # for motor in self.motors.values():
-        #     motor.Set_Value(desiredAngle, robotId)
     def Think(self):
         self.nn.Update()
         self.nn.Print()
+
+    def Check_Collisions(self):
+        # List of obstacle names from SOLUTION.Create_World()
+        obstacle_names = ["LeftBarrier", "RightBarrier", "BackWall", "Pillar1", "Pillar2", "Pillar3", "Pillar4"]
+
+        # Check all bodies in the simulation
+        for i in range(p.getNumBodies()):
+            body_info = p.getBodyInfo(i)
+            body_name = body_info[1].decode('utf-8')  # Name of the body
+            if body_name in obstacle_names:
+                # Check for contact between robot and this obstacle
+                contact_points = p.getContactPoints(self.robotId, i)
+                if contact_points:  # If there are any contact points
+                    self.collision_penalty += 0.5  # Add penalty per collision (adjust as needed)
     def Get_Fitness(self, solutionID):
 
         # original code
+        # basePositionAndOrientation = p.getBasePositionAndOrientation(self.robotId)
+        # basePosition = basePositionAndOrientation[0]
+        # xPosition = basePosition[0]
+
+        # Get the base position of the robot
         basePositionAndOrientation = p.getBasePositionAndOrientation(self.robotId)
         basePosition = basePositionAndOrientation[0]
         xPosition = basePosition[0]
+        yPosition = basePosition[1]
+        zPosition = basePosition[2]
+
+        # Define the goal position
+        goal_x, goal_y, goal_z = self.goalPosition  # [0, 19, 0.5]
+
+        # Calculate Euclidean distance to the goal
+        distance_to_goal = math.sqrt((xPosition - goal_x) ** 2 + (yPosition - goal_y) ** 2 + (zPosition - goal_z) ** 2)
+
+        # Define maximum possible distance
+        max_distance = math.sqrt((7 ** 2) + (19 ** 2) + (1 ** 2))  # Approx. world diagonal
+
+        # Base fitness: Higher when closer to goal (normalized between 0 and 1)
+        fitness = 1 - (distance_to_goal / max_distance)
+
+        # Apply collision penalty
+        fitness -= self.collision_penalty
+
+        # Bonus for getting very close to the goal
+        if distance_to_goal < 1.0:  # Within 1 unit of the goal
+            fitness += 0.5  # Reward for reaching the goal
+
+        # Ensure fitness is non-negative
+        fitness = max(0, fitness)
+
 
         filename = f"tmp{solutionID}.txt"
         file = open(filename, "w")
         # Write the final x-coordinate of link zero
-        file.write(str(xPosition))
+        # file.write(str(xPosition))
+        file.write(str(fitness))
         file.close()
         os.system(f"mv tmp{solutionID}.txt fitness{solutionID}.txt")
 

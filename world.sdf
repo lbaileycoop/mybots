@@ -1,6 +1,6 @@
 <sdf>
     <model name="LeftBarrier">
-        <pose>-5 5 1 0 0 0 </pose>
+        <pose>-7 7.75 1 0 0 0 </pose>
         <link name="LeftBarrier">
             <inertial>
                 <mass>200</mass>
@@ -16,21 +16,21 @@
             <collision>
                 <geometry>
                    <box>
-                      <size>0.2 15 2</size>
+                      <size>0.3 20 2</size>
                    </box>
                 </geometry>
             </collision>
             <visual>
                 <geometry>
                    <box>
-                      <size>0.2 15 2</size>
+                      <size>0.3 20 2</size>
                    </box>
                 </geometry>
             </visual>
         </link>
     </model>
     <model name="RightBarrier">
-        <pose>5 5 1 0 0 0 </pose>
+        <pose>7 7.75 1 0 0 0 </pose>
         <link name="RightBarrier">
             <inertial>
                 <mass>200</mass>
@@ -46,14 +46,44 @@
             <collision>
                 <geometry>
                    <box>
-                      <size>0.2 15 2</size>
+                      <size>0.3 20 2</size>
                    </box>
                 </geometry>
             </collision>
             <visual>
                 <geometry>
                    <box>
-                      <size>0.2 15 2</size>
+                      <size>0.3 20 2</size>
+                   </box>
+                </geometry>
+            </visual>
+        </link>
+    </model>
+    <model name="BackWall">
+        <pose>0 -2.625 1 0 0 0 </pose>
+        <link name="BackWall">
+            <inertial>
+                <mass>200</mass>
+                <inertia>
+                    <ixx>0.083</ixx>
+                    <ixy>0.0</ixy>
+                    <ixz>0.0</ixz>
+                    <iyy>0.083</iyy>
+                    <iyz>0.0</iyz>
+                    <izz>0.083</izz>
+                </inertia>
+            </inertial>
+            <collision>
+                <geometry>
+                   <box>
+                      <size>14.25 0.3 2</size>
+                   </box>
+                </geometry>
+            </collision>
+            <visual>
+                <geometry>
+                   <box>
+                      <size>14.25 0.3 2</size>
                    </box>
                 </geometry>
             </visual>
