@@ -42,7 +42,7 @@ class PARALLEL_HILL_CLIMBER:
             solutions[parent].Wait_For_Simulation_To_End()
     def Select(self):
         for key in self.parents:
-            if self.children[key].fitness < self.parents[key].fitness:
+            if self.children[key].fitness > self.parents[key].fitness:
                 self.parents[key] = copy.deepcopy(self.children[key])
     def Print(self):
         print()

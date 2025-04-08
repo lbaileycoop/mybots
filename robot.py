@@ -74,8 +74,8 @@ class ROBOT:
             if body_name in obstacle_names:
                 # Check for contact between robot and this obstacle
                 contact_points = p.getContactPoints(self.robotId, i)
-                if contact_points:  # If there are any contact points
-                    self.collision_penalty += 0.5  # Add penalty per collision (adjust as needed)
+                if contact_points:
+                    self.collision_penalty += 0.5  # Add penalty per collision
     def Get_Fitness(self, solutionID):
 
         # original code
@@ -91,23 +91,23 @@ class ROBOT:
         zPosition = basePosition[2]
 
         # Define the goal position
-        goal_x, goal_y, goal_z = self.goalPosition  # [0, 19, 0.5]
+        goal_x, goal_y, goal_z = self.goalPosition
 
         # Calculate Euclidean distance to the goal
         distance_to_goal = math.sqrt((xPosition - goal_x) ** 2 + (yPosition - goal_y) ** 2 + (zPosition - goal_z) ** 2)
 
         # Define maximum possible distance
-        max_distance = math.sqrt((7 ** 2) + (19 ** 2) + (1 ** 2))  # Approx. world diagonal
+        max_distance = math.sqrt((7 ** 2) + (19 ** 2) + (1 ** 2))
 
-        # Base fitness: Higher when closer to goal (normalized between 0 and 1)
+        # Base fitness is Higher when closer to goal
         fitness = 1 - (distance_to_goal / max_distance)
 
         # Apply collision penalty
         fitness -= self.collision_penalty
 
         # Bonus for getting very close to the goal
-        if distance_to_goal < 1.0:  # Within 1 unit of the goal
-            fitness += 0.5  # Reward for reaching the goal
+        if distance_to_goal < 1.0:  # within 1 unit of the goal
+            fitness += 0.5  # reward for reaching the goal
 
         # Ensure fitness is non-negative
         fitness = max(0, fitness)

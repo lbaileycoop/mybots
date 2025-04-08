@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c846beea-a7bf-418f-b163-2638c766a572" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/fitness7.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/1" beforeDir="false" afterPath="$PROJECT_DIR$/1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitness79.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fitness190.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parallelHillClimber.py" beforeDir="false" afterPath="$PROJECT_DIR$/parallelHillClimber.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot.py" beforeDir="false" afterPath="$PROJECT_DIR$/robot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/simulation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solution.py" beforeDir="false" afterPath="$PROJECT_DIR$/solution.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world.sdf" beforeDir="false" afterPath="$PROJECT_DIR$/world.sdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +105,9 @@
       <workItem from="1743363220491" duration="4978000" />
       <workItem from="1743468553341" duration="3278000" />
       <workItem from="1743697070594" duration="6402000" />
-      <workItem from="1743863689372" duration="3787000" />
+      <workItem from="1743863689372" duration="4476000" />
+      <workItem from="1744053416651" duration="520000" />
+      <workItem from="1744073720852" duration="968000" />
     </task>
     <servers />
   </component>
