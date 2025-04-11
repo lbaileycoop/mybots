@@ -74,7 +74,7 @@ class ROBOT:
                 # Check for contact between robot and this obstacle
                 contact_points = p.getContactPoints(self.robotId, i)
                 if contact_points:
-                    self.collision_penalty += 1  # Add penalty per collision
+                    self.collision_penalty += 10  # Add penalty per collision
     def Get_Fitness(self, solutionID):
         # Get the base position of the robot
         basePositionAndOrientation = p.getBasePositionAndOrientation(self.robotId)
@@ -100,7 +100,7 @@ class ROBOT:
 
         # Bonus for getting very close to the goal
         if distance_to_goal < 2.0:  # within 1 unit of the goal
-            fitness += 3  # reward for reaching the goal
+            fitness += 5  # reward for reaching the goal
 
         # Ensure fitness is non-negative
         fitness = max(0, fitness)
