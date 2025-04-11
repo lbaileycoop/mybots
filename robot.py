@@ -1,5 +1,4 @@
 import math
-
 import pybullet as p
 import pybullet_data
 import pyrosim.pyrosim as pyrosim
@@ -75,14 +74,8 @@ class ROBOT:
                 # Check for contact between robot and this obstacle
                 contact_points = p.getContactPoints(self.robotId, i)
                 if contact_points:
-                    self.collision_penalty += 0.5  # Add penalty per collision
+                    self.collision_penalty += 1  # Add penalty per collision
     def Get_Fitness(self, solutionID):
-
-        # original code
-        # basePositionAndOrientation = p.getBasePositionAndOrientation(self.robotId)
-        # basePosition = basePositionAndOrientation[0]
-        # xPosition = basePosition[0]
-
         # Get the base position of the robot
         basePositionAndOrientation = p.getBasePositionAndOrientation(self.robotId)
         basePosition = basePositionAndOrientation[0]
@@ -106,8 +99,8 @@ class ROBOT:
         fitness -= self.collision_penalty
 
         # Bonus for getting very close to the goal
-        if distance_to_goal < 1.0:  # within 1 unit of the goal
-            fitness += 0.5  # reward for reaching the goal
+        if distance_to_goal < 2.0:  # within 1 unit of the goal
+            fitness += 3  # reward for reaching the goal
 
         # Ensure fitness is non-negative
         fitness = max(0, fitness)
@@ -116,7 +109,6 @@ class ROBOT:
         filename = f"tmp{solutionID}.txt"
         file = open(filename, "w")
         # Write the final x-coordinate of link zero
-        # file.write(str(xPosition))
         file.write(str(fitness))
         file.close()
         os.system(f"mv tmp{solutionID}.txt fitness{solutionID}.txt")
