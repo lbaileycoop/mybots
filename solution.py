@@ -11,18 +11,36 @@ class SOLUTION:
         self.myID = nextAvailableID
         self.fitness = 0
     def Create_World(self):
+        """
+        Condition A: Many small obstacles scattered throughout the runway
+        """
         pyrosim.Start_SDF("world.sdf")
 
-        # Create barriers on both sides of the runway
-        pyrosim.Send_Cube(name="LeftBarrier", pos=[-7, 7.75, 1], size=[0.3, 20, 2], mass=200)  # Left wall
-        pyrosim.Send_Cube(name="RightBarrier", pos=[7, 7.75, 1], size=[0.3, 20, 2], mass=200)  # Right wall
-        pyrosim.Send_Cube(name="BackWall", pos=[0, -2.625, 1], size=[14.25, 0.3, 2], mass=200)  # Horizontal wall at the back
+        # Static barriers & back wall
+        pyrosim.Send_Cube(name="LeftBarrier",  pos=[-7,  7.75, 1], size=[0.3, 20, 2], mass=200)
+        pyrosim.Send_Cube(name="RightBarrier", pos=[ 7,  7.75, 1], size=[0.3, 20, 2], mass=200)
+        pyrosim.Send_Cube(name="BackWall",    pos=[ 0, -2.625, 1], size=[14.25, 0.3, 2], mass=200)
 
-        # Place four pillars as obstacles on the runway
-        pyrosim.Send_Cube(name="Pillar1", pos=[-1.5, 2, 0.75], size=[0.3, 0.3, 1.5], mass=200)  # First pillar
-        pyrosim.Send_Cube(name="Pillar2", pos=[0, 4, 0.75], size=[0.3, 0.3, 1.5], mass=200)  # Second pillar
-        pyrosim.Send_Cube(name="Pillar3", pos=[0, 8, 0.75], size=[0.3, 0.3, 1.5], mass=200)  # Third pillar
-        pyrosim.Send_Cube(name="Pillar4", pos=[3, 10, 0.75], size=[0.3, 0.3, 1.5], mass=200)  # Fourth pillar
+        # 8 small pillars scattered
+        small_positions = [
+            (-4,  2), (-2,  4), (2,  8), (4, 10),
+            (-3, 12), (-1, 14), (3, 18), (5,  5)
+        ]
+        for i, (x, y) in enumerate(small_positions):
+            pyrosim.Send_Cube(
+                name   = f"SmallObs{i}",
+                pos    = [x, y, 0.75],
+                size   = [0.2, 0.2, 1.0],
+                mass   = 200
+            )
+
+        # Goal marker
+        pyrosim.Send_Cube(
+            name = "Goal",
+            pos  = [0, 20, 0.5],
+            size = [0.5, 0.5, 0.5],
+            mass = 0.1
+        )
 
         pyrosim.End()
 
