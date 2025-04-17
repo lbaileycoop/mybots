@@ -89,9 +89,9 @@
             </visual>
         </link>
     </model>
-    <model name="SmallObs0">
-        <pose>-4 2 0.75 0 0 0 </pose>
-        <link name="SmallObs0">
+    <model name="Obstacles0">
+        <pose>-3 8 1.0 0 0 0 </pose>
+        <link name="Obstacles0">
             <inertial>
                 <mass>200</mass>
                 <inertia>
@@ -106,22 +106,22 @@
             <collision>
                 <geometry>
                    <box>
-                      <size>0.2 0.2 1.0</size>
+                      <size>1.5 1.5 2.0</size>
                    </box>
                 </geometry>
             </collision>
             <visual>
                 <geometry>
                    <box>
-                      <size>0.2 0.2 1.0</size>
+                      <size>1.5 1.5 2.0</size>
                    </box>
                 </geometry>
             </visual>
         </link>
     </model>
-    <model name="SmallObs1">
-        <pose>-2 4 0.75 0 0 0 </pose>
-        <link name="SmallObs1">
+    <model name="Obstacles1">
+        <pose>3 8 1.0 0 0 0 </pose>
+        <link name="Obstacles1">
             <inertial>
                 <mass>200</mass>
                 <inertia>
@@ -136,22 +136,22 @@
             <collision>
                 <geometry>
                    <box>
-                      <size>0.2 0.2 1.0</size>
+                      <size>1.5 1.5 2.0</size>
                    </box>
                 </geometry>
             </collision>
             <visual>
                 <geometry>
                    <box>
-                      <size>0.2 0.2 1.0</size>
+                      <size>1.5 1.5 2.0</size>
                    </box>
                 </geometry>
             </visual>
         </link>
     </model>
-    <model name="SmallObs2">
-        <pose>2 8 0.75 0 0 0 </pose>
-        <link name="SmallObs2">
+    <model name="Obstacles2">
+        <pose>0 14 1.0 0 0 0 </pose>
+        <link name="Obstacles2">
             <inertial>
                 <mass>200</mass>
                 <inertia>
@@ -166,22 +166,22 @@
             <collision>
                 <geometry>
                    <box>
-                      <size>0.2 0.2 1.0</size>
+                      <size>1.5 1.5 2.0</size>
                    </box>
                 </geometry>
             </collision>
             <visual>
                 <geometry>
                    <box>
-                      <size>0.2 0.2 1.0</size>
+                      <size>1.5 1.5 2.0</size>
                    </box>
                 </geometry>
             </visual>
         </link>
     </model>
-    <model name="SmallObs3">
-        <pose>4 10 0.75 0 0 0 </pose>
-        <link name="SmallObs3">
+    <model name="Obstacles3">
+        <pose>0 4 1.0 0 0 0 </pose>
+        <link name="Obstacles3">
             <inertial>
                 <mass>200</mass>
                 <inertia>
@@ -196,134 +196,14 @@
             <collision>
                 <geometry>
                    <box>
-                      <size>0.2 0.2 1.0</size>
+                      <size>1.5 1.5 2.0</size>
                    </box>
                 </geometry>
             </collision>
             <visual>
                 <geometry>
                    <box>
-                      <size>0.2 0.2 1.0</size>
-                   </box>
-                </geometry>
-            </visual>
-        </link>
-    </model>
-    <model name="SmallObs4">
-        <pose>-3 12 0.75 0 0 0 </pose>
-        <link name="SmallObs4">
-            <inertial>
-                <mass>200</mass>
-                <inertia>
-                    <ixx>0.083</ixx>
-                    <ixy>0.0</ixy>
-                    <ixz>0.0</ixz>
-                    <iyy>0.083</iyy>
-                    <iyz>0.0</iyz>
-                    <izz>0.083</izz>
-                </inertia>
-            </inertial>
-            <collision>
-                <geometry>
-                   <box>
-                      <size>0.2 0.2 1.0</size>
-                   </box>
-                </geometry>
-            </collision>
-            <visual>
-                <geometry>
-                   <box>
-                      <size>0.2 0.2 1.0</size>
-                   </box>
-                </geometry>
-            </visual>
-        </link>
-    </model>
-    <model name="SmallObs5">
-        <pose>-1 14 0.75 0 0 0 </pose>
-        <link name="SmallObs5">
-            <inertial>
-                <mass>200</mass>
-                <inertia>
-                    <ixx>0.083</ixx>
-                    <ixy>0.0</ixy>
-                    <ixz>0.0</ixz>
-                    <iyy>0.083</iyy>
-                    <iyz>0.0</iyz>
-                    <izz>0.083</izz>
-                </inertia>
-            </inertial>
-            <collision>
-                <geometry>
-                   <box>
-                      <size>0.2 0.2 1.0</size>
-                   </box>
-                </geometry>
-            </collision>
-            <visual>
-                <geometry>
-                   <box>
-                      <size>0.2 0.2 1.0</size>
-                   </box>
-                </geometry>
-            </visual>
-        </link>
-    </model>
-    <model name="SmallObs6">
-        <pose>3 18 0.75 0 0 0 </pose>
-        <link name="SmallObs6">
-            <inertial>
-                <mass>200</mass>
-                <inertia>
-                    <ixx>0.083</ixx>
-                    <ixy>0.0</ixy>
-                    <ixz>0.0</ixz>
-                    <iyy>0.083</iyy>
-                    <iyz>0.0</iyz>
-                    <izz>0.083</izz>
-                </inertia>
-            </inertial>
-            <collision>
-                <geometry>
-                   <box>
-                      <size>0.2 0.2 1.0</size>
-                   </box>
-                </geometry>
-            </collision>
-            <visual>
-                <geometry>
-                   <box>
-                      <size>0.2 0.2 1.0</size>
-                   </box>
-                </geometry>
-            </visual>
-        </link>
-    </model>
-    <model name="SmallObs7">
-        <pose>5 5 0.75 0 0 0 </pose>
-        <link name="SmallObs7">
-            <inertial>
-                <mass>200</mass>
-                <inertia>
-                    <ixx>0.083</ixx>
-                    <ixy>0.0</ixy>
-                    <ixz>0.0</ixz>
-                    <iyy>0.083</iyy>
-                    <iyz>0.0</iyz>
-                    <izz>0.083</izz>
-                </inertia>
-            </inertial>
-            <collision>
-                <geometry>
-                   <box>
-                      <size>0.2 0.2 1.0</size>
-                   </box>
-                </geometry>
-            </collision>
-            <visual>
-                <geometry>
-                   <box>
-                      <size>0.2 0.2 1.0</size>
+                      <size>1.5 1.5 2.0</size>
                    </box>
                 </geometry>
             </visual>

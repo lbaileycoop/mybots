@@ -28,7 +28,7 @@ class SOLUTION:
         ]
         for i, (x, y) in enumerate(small_positions):
             pyrosim.Send_Cube(
-                name   = f"SmallObs{i}",
+                name   = f"Obstacles{i}",
                 pos    = [x, y, 0.75],
                 size   = [0.2, 0.2, 1.0],
                 mass   = 200
@@ -55,14 +55,14 @@ class SOLUTION:
         pyrosim.Send_Cube(name="RightBarrier", pos=[ 7,  7.75, 1], size=[0.3, 20, 2], mass=200)
         pyrosim.Send_Cube(name="BackWall",    pos=[ 0, -2.625, 1], size=[14.25, 0.3, 2], mass=200)
 
-        # 3 large blocks as obstacles
-        large_positions = [(-3, 8), (3, 8), (0, 14)]
-        for i, (x, y) in enumerate(large_positions):
+        # 4 large blocks as obstacles
+        obstacles_positions = [(-3, 8), (3, 8), (0, 14), (0, 4)]
+        for i, (x, y) in enumerate(obstacles_positions):
             pyrosim.Send_Cube(
-                name = f"LargeObs{i}",
+                name = f"Obstacles{i}",
                 pos  = [x, y, 1.0],
                 size = [1.5, 1.5, 2.0],
-                mass = 300
+                mass = 200
             )
 
         # Goal marker
@@ -131,7 +131,7 @@ class SOLUTION:
                                      weight=self.weights[currentRow][currentColumn])
         pyrosim.End()
     def Start_Simulation(self, directOrGUI):
-        self.Create_World_A()
+        self.Create_World_B()
         self.Create_Body()
         self.Create_Brain()
         os.system(f"python3 simulate.py {directOrGUI} {str(self.myID)} 2&>1 &")
