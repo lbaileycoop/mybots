@@ -10,7 +10,7 @@ class SOLUTION:
         self.weights = self.weights * 2 - 1
         self.myID = nextAvailableID
         self.fitness = 0
-    def Create_World(self):
+    def Create_World_A(self):
         """
         Condition A: Many small obstacles scattered throughout the runway
         """
@@ -32,6 +32,37 @@ class SOLUTION:
                 pos    = [x, y, 0.75],
                 size   = [0.2, 0.2, 1.0],
                 mass   = 200
+            )
+
+        # Goal marker
+        pyrosim.Send_Cube(
+            name = "Goal",
+            pos  = [0, 20, 0.5],
+            size = [0.5, 0.5, 0.5],
+            mass = 0.1
+        )
+
+        pyrosim.End()
+
+    def Create_World_B(self):
+        """
+        Condition B: Many small obstacles scattered throughout the runway
+        """
+        pyrosim.Start_SDF("world.sdf")
+
+        # Static barriers & back wall
+        pyrosim.Send_Cube(name="LeftBarrier",  pos=[-7,  7.75, 1], size=[0.3, 20, 2], mass=200)
+        pyrosim.Send_Cube(name="RightBarrier", pos=[ 7,  7.75, 1], size=[0.3, 20, 2], mass=200)
+        pyrosim.Send_Cube(name="BackWall",    pos=[ 0, -2.625, 1], size=[14.25, 0.3, 2], mass=200)
+
+        # 3 large blocks as obstacles
+        large_positions = [(-3, 8), (3, 8), (0, 14)]
+        for i, (x, y) in enumerate(large_positions):
+            pyrosim.Send_Cube(
+                name = f"LargeObs{i}",
+                pos  = [x, y, 1.0],
+                size = [1.5, 1.5, 2.0],
+                mass = 300
             )
 
         # Goal marker
@@ -100,7 +131,7 @@ class SOLUTION:
                                      weight=self.weights[currentRow][currentColumn])
         pyrosim.End()
     def Start_Simulation(self, directOrGUI):
-        self.Create_World()
+        self.Create_World_A()
         self.Create_Body()
         self.Create_Brain()
         os.system(f"python3 simulate.py {directOrGUI} {str(self.myID)} 2&>1 &")

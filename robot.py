@@ -56,7 +56,8 @@ class ROBOT:
 
     def Check_Collisions(self):
         # List of obstacle names from SOLUTION.Create_World()
-        obstacle_names = ["LeftBarrier", "RightBarrier", "BackWall", "SmallObs0", "SmallObs1", "SmallObs2", "SmallObs3", "SmallObs4", "SmallObs5", "SmallObs6", "SmallObs7"]
+        small_obstacle_names = [f"SmallObs{i}" for i in range(8)]
+        obstacle_names = ["LeftBarrier", "RightBarrier", "BackWall"] + small_obstacle_names
 
         # Check all bodies in the simulation
         for i in range(p.getNumBodies()):
