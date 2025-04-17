@@ -70,4 +70,4 @@ class PARALLEL_HILL_CLIMBER:
         best_parent = max(self.parents, key=lambda k: self.parents[k].fitness)  # Use max for highest fitness
         self.parents[best_parent].Start_Simulation("GUI")
         self.parents[best_parent].Wait_For_Simulation_To_End()  # Ensure simulation completes
-        print(f"Best robot (ID {best_parent}) simulation complete. Fitness: {self.parents[best_parent].fitness}")
+        print(f"\nMost fit robot after simulation is complete. Fitness: {self.parents[best_parent].fitness}\n")

@@ -56,12 +56,12 @@ class SOLUTION:
         pyrosim.Send_Cube(name="BackWall",    pos=[ 0, -2.625, 1], size=[14.25, 0.3, 2], mass=200)
 
         # 4 large blocks as obstacles
-        obstacles_positions = [(-3, 8), (3, 8), (0, 14), (0, 4)]
+        obstacles_positions = [(-3, 8), (3, 8), (0, 15), (0, 3)]
         for i, (x, y) in enumerate(obstacles_positions):
             pyrosim.Send_Cube(
                 name = f"Obstacles{i}",
                 pos  = [x, y, 1.0],
-                size = [1.5, 1.5, 2.0],
+                size = [1.2, 1.2, 2.0],
                 mass = 200
             )
 

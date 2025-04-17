@@ -106,14 +106,14 @@
             <collision>
                 <geometry>
                    <box>
-                      <size>1.5 1.5 2.0</size>
+                      <size>1.2 1.2 2.0</size>
                    </box>
                 </geometry>
             </collision>
             <visual>
                 <geometry>
                    <box>
-                      <size>1.5 1.5 2.0</size>
+                      <size>1.2 1.2 2.0</size>
                    </box>
                 </geometry>
             </visual>
@@ -136,21 +136,21 @@
             <collision>
                 <geometry>
                    <box>
-                      <size>1.5 1.5 2.0</size>
+                      <size>1.2 1.2 2.0</size>
                    </box>
                 </geometry>
             </collision>
             <visual>
                 <geometry>
                    <box>
-                      <size>1.5 1.5 2.0</size>
+                      <size>1.2 1.2 2.0</size>
                    </box>
                 </geometry>
             </visual>
         </link>
     </model>
     <model name="Obstacles2">
-        <pose>0 14 1.0 0 0 0 </pose>
+        <pose>0 15 1.0 0 0 0 </pose>
         <link name="Obstacles2">
             <inertial>
                 <mass>200</mass>
@@ -166,21 +166,21 @@
             <collision>
                 <geometry>
                    <box>
-                      <size>1.5 1.5 2.0</size>
+                      <size>1.2 1.2 2.0</size>
                    </box>
                 </geometry>
             </collision>
             <visual>
                 <geometry>
                    <box>
-                      <size>1.5 1.5 2.0</size>
+                      <size>1.2 1.2 2.0</size>
                    </box>
                 </geometry>
             </visual>
         </link>
     </model>
     <model name="Obstacles3">
-        <pose>0 4 1.0 0 0 0 </pose>
+        <pose>0 3 1.0 0 0 0 </pose>
         <link name="Obstacles3">
             <inertial>
                 <mass>200</mass>
@@ -196,14 +196,14 @@
             <collision>
                 <geometry>
                    <box>
-                      <size>1.5 1.5 2.0</size>
+                      <size>1.2 1.2 2.0</size>
                    </box>
                 </geometry>
             </collision>
             <visual>
                 <geometry>
                    <box>
-                      <size>1.5 1.5 2.0</size>
+                      <size>1.2 1.2 2.0</size>
                    </box>
                 </geometry>
             </visual>
