@@ -130,8 +130,14 @@ class SOLUTION:
                 pyrosim.Send_Synapse(sourceNeuronName=currentRow, targetNeuronName=currentColumn + 6,
                                      weight=self.weights[currentRow][currentColumn])
         pyrosim.End()
-    def Start_Simulation(self, directOrGUI):
-        self.Create_World_B()
+    def Start_Simulation(self, directOrGUI, world):
+        # self.Create_World_B()
+
+        # choose world based on env flag
+        if world == "A":
+            self.Create_World_A()
+        else:
+            self.Create_World_B()
         self.Create_Body()
         self.Create_Brain()
         os.system(f"python3 simulate.py {directOrGUI} {str(self.myID)} 2&>1 &")

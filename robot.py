@@ -56,7 +56,7 @@ class ROBOT:
 
     def Check_Collisions(self):
         # List of obstacle names from SOLUTION.Create_World()
-        small_obstacle_names = [f"Obstacles{i}" for i in range(4)]
+        small_obstacle_names = [f"Obstacles{i}" for i in range(8)]
         obstacle_names = ["LeftBarrier", "RightBarrier", "BackWall"] + small_obstacle_names
 
         # Check all bodies in the simulation
@@ -93,7 +93,7 @@ class ROBOT:
 
         # Bonus for getting very close to the goal
         if distance_to_goal < 2.0:  # within 1 unit of the goal
-            fitness += 5  # reward for reaching the goal
+            fitness += 20  # reward for reaching the goal
 
         # Ensure fitness is non-negative
         fitness = max(0, fitness)
