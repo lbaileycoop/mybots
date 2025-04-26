@@ -55,19 +55,13 @@ class ROBOT:
         self.nn.Print()
 
     def Check_Collisions(self):
-        # List of obstacle names from SOLUTION.Create_World()
-        small_obstacle_names = [f"Obstacles{i}" for i in range(8)]
-        obstacle_names = ["LeftBarrier", "RightBarrier", "BackWall"] + small_obstacle_names
+        static_obs = {"LeftBarrier", "RightBarrier", "BackWall"}
 
-        # Check all bodies in the simulation
-        for i in range(p.getNumBodies()):
-            body_info = p.getBodyInfo(i)
-            body_name = body_info[1].decode('utf-8')  # Name of the body
-            if body_name in obstacle_names:
-                # Check for contact between robot and this obstacle
-                contact_points = p.getContactPoints(self.robotId, i)
-                if contact_points:
-                    self.collision_penalty += 10  # Add penalty per collision
+        for body_id in range(p.getNumBodies()):
+            name = p.getBodyInfo(body_id)[1].decode("utf-8")
+            if name in static_obs or name.startswith("Obstacles"):
+                if p.getContactPoints(self.robotId, body_id):
+                    self.collision_penalty += 10
     def Get_Fitness(self, solutionID):
         # Get the base position of the robot
         basePositionAndOrientation = p.getBasePositionAndOrientation(self.robotId)
